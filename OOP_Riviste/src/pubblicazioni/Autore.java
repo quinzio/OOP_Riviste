@@ -4,41 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Autore {
-    private String name;
-    private double impactFactor;
-    private List<Articolo> articoli = new ArrayList<>();
+	private String name;
+	private double impactFactor;
+	private List<Articolo> articoli = new ArrayList<>();
 
-    public Autore(String name, double impactFactor) {
-	this.name = name;
-	this.impactFactor = impactFactor;
-    }
-    
-    public void addArticolo(Articolo a) {
-	articoli.add(a);
-    }
-    
-    public List<Articolo> getArticoli() {
-	return articoli;
-    }
+	public Autore(String name, double impactFactor) {
+		this.name = name;
+		this.impactFactor = impactFactor;
+	}
 
-    public String getNome() {
-        return name;
-    }
+	public void addArticolo(Articolo a) {
+		articoli.add(a);
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public List<Articolo> getArticoli() {
+		return articoli;
+	}
 
-    public double getIF() {
-        return impactFactor;
-    }
-    
-    public void increaseImpatFactor(double impactFactor) {
-	this.impactFactor += impactFactor;
-    }
+	public String getNome() {
+		return name;
+	}
 
-    public void setImpactFactor(double impactFactor) {
-        this.impactFactor = impactFactor;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getIF() {
+		return impactFactor;
+	}
+
+	public void increaseImpatFactor(double impactFactor) {
+		this.impactFactor += impactFactor;
+	}
+
+	public void setImpactFactor(double impactFactor) {
+		this.impactFactor = impactFactor;
+	}
 
 }

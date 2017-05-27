@@ -36,7 +36,12 @@ public class Pubblicazioni {
 		return riviste;
 	}
 
-	public Rivista addRivista(String titolo, double impactFactor) {
+	public Rivista addRivista(String titolo, double impactFactor) throws Exception {
+		if (
+			riviste.stream().filter(r -> r.getTitolo().equals(titolo))
+			.collect(Collectors.counting()) > 0
+		)
+			throw new Exception("Duplicated title");
 		Rivista riv = new Rivista(titolo, impactFactor);
 		riviste.add(riv);
 		return riv;
@@ -110,12 +115,12 @@ public class Pubblicazioni {
 	public void letturaFile(String fileName) {
 		String dataType;
 		String nome;
-		Year anno = null;
+		Year anno;
 		Rivista riv = null;
 		List<String> autori = new ArrayList<>();
-		String[] autoriA = null;
+		String[] autoriA = new String[0];
 		double impactFactor;
-		try (BufferedReader r = new BufferedReader(new FileReader("data.txt"))) {
+		try (BufferedReader r = new BufferedReader(new FileReader(fileName))) {
 			List<String> ll = r.lines().collect(Collectors.toList());
 			for (String linea : ll) {
 
@@ -125,17 +130,17 @@ public class Pubblicazioni {
 					dataType = s.next();
 					if (dataType.equals("rivista")) {
 						nome = s.next();
-						impactFactor = s.nextDouble();
+						impactFactor = Double.valueOf(s.next());
 						riv = addRivista(nome, impactFactor);
 						riviste.add(riv);
 					}
 					if (dataType.equals("articolo")) {
 						nome = s.next();
-						anno.of(s.nextInt());
+						anno = Year.of(s.nextInt());
 						while (s.hasNext()) {
 							autori.add(s.next());
 						}
-						autori.toArray(autoriA);
+						autoriA = autori.toArray(autoriA);
 						if (riv == null)
 							throw new Exception("Error reading file");
 						riv.addArticolo(nome, anno, autoriA);

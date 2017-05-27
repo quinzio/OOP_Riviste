@@ -57,7 +57,12 @@ public class Rivista {
 			autori.get(autore).increaseImpatFactor(this.impactFactor);
 			autoriLocal.add(autori.get(autore));
 		}
-		articoli.put(titolo, new Articolo(titolo, anno, autoriLocal));
+		Articolo art = new Articolo(titolo, anno, autoriLocal);
+		articoli.put(titolo, art);
+		for (Autore autore : autoriLocal) {
+			autore.addArticolo(art);
+		}
+		
 	}
 
 	public List<Articolo> getArticoli() {

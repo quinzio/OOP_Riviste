@@ -2,6 +2,8 @@ package main;
 
 import java.time.Year;
 import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeSet;
