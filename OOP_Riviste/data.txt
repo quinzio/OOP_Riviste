@@ -1,0 +1,10 @@
+rivista, corriere scientifico, 1.5
+articolo, nanotecnologie, 2012, faggio
+articolo, alcuni problemi aperti, 2014, quercia
+rivista, corriere scientifico, 3.5
+articolo, macrocosmo e microcosmo, acero
+rivista, fisica e metafisica, 1.2
+articolo, materia oscura, 2012, quercia, faggio
+rivista, universo in espansione, 2.4
+articolo, big bang aggiornato, 2010, quercia, acero
+articolo, alcuni problemi aperti, 2014, quercia

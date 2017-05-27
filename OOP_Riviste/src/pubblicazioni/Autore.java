@@ -21,7 +21,7 @@ public class Autore {
 	return articoli;
     }
 
-    public String getName() {
+    public String getNome() {
         return name;
     }
 
@@ -29,7 +29,7 @@ public class Autore {
         this.name = name;
     }
 
-    public double getImpactFactor() {
+    public double getIF() {
         return impactFactor;
     }
     
